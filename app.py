@@ -21,7 +21,8 @@ from models import Base, Category, Item, User
 app = Flask(__name__)
 APPLICATION_NAME = "Items Catalog"
 # Connect to Database and create database session
-engine = create_engine('sqlite:///itemcatalog.db')
+# engine = create_engine('sqlite:///itemcatalog.db')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 session = scoped_session(sessionmaker(bind=engine))
