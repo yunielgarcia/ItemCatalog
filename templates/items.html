@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row top-menu">
+    <div class="col-md-10"></div>
+    <div class="col-md-2 text-right">
+    </div>
+</div>
+
+<section class="container" style="background-color: white">
+    <div class="col-md-4">
+        <div style="padding: 20px">
+            <h2>Categories</h2>
+        </div>
+        <!--CATEGORIES-->
+        {% for cat in categories %}
+        <div>
+            <div class="restaurant-list">
+                <a href="{{url_for('show_items_for_category', category_id=cat.id)}}">
+                    {% if cat.id == category_id_selected %}
+                    <h3 style="font-weight: bold">{{cat.name}}</h3>
+                    {% else %}
+                    <h3>{{cat.name}}</h3>
+                    {% endif %}
+                </a>
+            </div>
+            <div class=""></div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-8">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1" style="padding: 20px">
+                    <h2>Items</h2>
+                </div>
+                {% if current_user.is_authenticated %}
+                <div class="col-md-11" style="padding-top: 50px;">
+                    <a href="{{url_for('new_item')}}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        <span style="color: green;font-size: 18px">(Add)</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <!--ITEMS-->
+        {% for item in items %}
+        <div>
+            <div class="restaurant-list">
+                <a href="{{url_for('show_single_item', item_id=item.id)}}">
+                    <h3>{{item.name}}({{item.category.name}})</h3>
+                </a>
+            </div>
+            <div class=""></div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}
