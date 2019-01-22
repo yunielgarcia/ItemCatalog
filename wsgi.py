@@ -2,7 +2,7 @@ import sys
 
 from app import app as application
 
-sys.path.insert(0, '/var/www/catalog')
+sys.path.insert(0, '/var/www/FlaskApps/ItemCatalog')
 
 application.secret_key = '3452@#$%@#$543254325jkljrtkelwrtjerw4^$ra--'
 
