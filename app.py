@@ -29,9 +29,11 @@ Base.metadata.bind = engine
 session = scoped_session(sessionmaker(bind=engine))
 
 print("trying to open")
-reading = open('client_secrets.json').read()
-print(reading)
-CLIENT_ID = json.loads(reading)['web']['client_id']
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+print(PROJECT_ROOT)
+json_url = os.path.join(PROJECT_ROOT, 'client_secrets.json')
+print(json_url)
+CLIENT_ID = json.load(open(json_url))['web']['client_id']
 
 login_manager = LoginManager()
 login_manager.init_app(app)
