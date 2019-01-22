@@ -28,11 +28,10 @@ Base.metadata.bind = engine
 
 session = scoped_session(sessionmaker(bind=engine))
 
-
-CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
-# CLIENT_ID = ("561949934964-430adcuuac3m1nqskopr1rd2j74c53if.apps"
-#              ".googleusercontent.com")
+print("trying to open")
+reading = open('client_secrets.json').read()
+print(reading)
+CLIENT_ID = json.loads(reading)['web']['client_id']
 
 login_manager = LoginManager()
 login_manager.init_app(app)
