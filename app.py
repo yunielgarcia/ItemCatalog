@@ -28,10 +28,9 @@ Base.metadata.bind = engine
 
 session = scoped_session(sessionmaker(bind=engine))
 
-dir_name = os.path.dirname('client_secrets.json')
-if os.path.exists(dir_name):
-    CLIENT_ID = json.loads(
-        open('client_secrets.json', 'r').read())['web']['client_id']
+
+CLIENT_ID = json.loads(
+    open('client_secrets.json', 'r').read())['web']['client_id']
 
 login_manager = LoginManager()
 login_manager.init_app(app)
