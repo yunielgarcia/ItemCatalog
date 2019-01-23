@@ -1,21 +1,54 @@
 # Items Catalog
 
-Items Catalog is a web application that connects to a SQlite3 database and lets you browse a catalog
+Items Catalog is a web application that connects to a Postresql database and lets you browse a catalog
 of items. Sort them by Category. It also features a third party authentication system (Google +).
 Once authenticated users can manage their own Items (Create, Read, Update, Delete (CRUD)).
 
-## Requirements to run it
+## Project Details
+  - ip address: 52.206.14.6
+  - ssh port: 2200
+  - Hosted url: http://52.206.14.6.xip.io/
 
-  - You may be in a linux environment/image. Like [Here](https://classroom.udacity.com/nanodegrees/nd004/parts/51200cee-6bb3-4b55-b469-7d4dd9ad7765/modules/c57b57d4-29a8-4c5f-9bb8-5d53df3e48f4/lessons/bc938915-0f7e-4550-a48f-82241ab649e3/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91)
-  - Or any other python environment (Mac/Windows)
+## Software Summary
+Ubuntu packages:
+-   apache2 [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=apache2&searchon=names)
+-   libapache2-mod-wsgi [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=libapache2-mod-wsgi&searchon=names)
+-   python-flask [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=python-flask&searchon=names)
+-   postgresql [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=postgresql&searchon=names)
+-   python-psycopg2 [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=python-psycopg2&searchon=names)
+-   libpq-dev [here](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=libpq-dev&searchon=names)
 
-## Instructions to run it
--   Install all the packages with their specified version in requirements.txt. You can do.
-`sudo pip install -r requirements.txt`
--   You must initialized the database by running `python populate_items.py`. This will create the Categories and a few items examples. You will be able to add your afterwords.
--   The project uses third party authentication system. In order to use it you must create a project at
-    [https://console.developers.google.com/](https://console.developers.google.com/).
-    Enables the Google + API for web apps. Generate the credentials to use. Download them to a file named `client_secrets.json` and place it in the root directory, at the same level of your `app.py`. The file should look like this:
+Python packages:
+bleach==3.0.2
+certifi==2018.11.29
+chardet==3.0.4
+Click==7.0
+Flask==1.0.2
+Flask-HTTPAuth==3.2.4
+Flask-Login==0.4.1
+Flask-SQLAlchemy==2.3.2
+httplib2==0.12.0
+idna==2.8
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.1.0
+oauth2client==4.1.3
+packaging==18.0
+passlib==1.7.1
+psycopg2==2.6.1
+psycopg2-binary==2.7.6.1
+pyasn1==0.4.4
+pyasn1-modules==0.2.2
+pyparsing==2.3.0
+redis==3.0.1
+requests==2.21.0
+rsa==4.0
+six==1.12.0
+SQLAlchemy==1.2.15
+urllib3==1.24.1
+webencodings==0.5.1
+Werkzeug==0.14.1
+
 ```
 {
     "web": {

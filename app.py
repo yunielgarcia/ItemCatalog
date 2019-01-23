@@ -21,18 +21,14 @@ from models import Base, Category, Item, User
 
 app = Flask(__name__)
 APPLICATION_NAME = "Items Catalog"
-# Connect to Database and create database session
-# engine = create_engine('sqlite:///itemcatalog.db')
+
 engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 session = scoped_session(sessionmaker(bind=engine))
 
-print("trying to open")
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
-print(PROJECT_ROOT)
 json_url = os.path.join(PROJECT_ROOT, 'client_secrets.json')
-print(json_url)
 CLIENT_ID = json.load(open(json_url))['web']['client_id']
 
 login_manager = LoginManager()
